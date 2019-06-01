@@ -3,11 +3,10 @@ service: serverless-react-boilerplate
 
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: nodejs10.x
   region: ${opt:region, 'us-east-1'}
   stage: ${opt:stage, 'dev'}
-  memorySize: 512
-  timeout: 6
+  timeout: 30
   logRetentionInDays: 7
 
   environment:
