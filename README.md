@@ -1,8 +1,6 @@
 # ♨️ serverless-react-boilerplate
 
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
-[![dependencies](https://img.shields.io/david/arabold/serverless-react-boilerplate.svg)](https://github.com/arabold/serverless-react-boilerplate)
-
 
 Lightweight boilerplate project to setup a React 16 web application on AWS Lambda using the Serverless Framework.
 
@@ -30,10 +28,11 @@ serverless-react-boilerplate/
 │   │   └── ... - Client-side code
 │   ├── components/
 │   │   └── ... - React components
-│   └── server/
+   └── handlers/
+│       └── ... - AWS Lambda function handlers
+││   └── server/
 │       └── ... - Server-side code
 │
-├── handler.js - AWS Lambda function handler
 ├── serverless.yaml - Project configuration
 ├── webpack.client.config.js - Webpack configuration for client-side code
 ├── webpack.server.config.js - Webpack configuration for the Lambda backend
@@ -94,12 +93,6 @@ Similar to the statement above, I have decided against integrating with a
 specific framework. The boilerplate uses plain and simple CSS and integrating
 another system should be easy enough.
 
-### Flow and Typescript
-Personally I love Flow but have decided against using it in this project 
-for now. There's not much JavaScript code in here anyway so you can use in
-your own project whatever you prefer.
-
-
 ## Testing
 
 You can test the setup locally. However, due to the nature of this setup you
@@ -118,6 +111,12 @@ For local testing run the following command and open your web browser
 at http://localhost:3000:
 ```sh
 npm start
+```
+
+Testing is setup using eslint and will execute all `*.js` files in 
+the `src/` directory:
+```sh
+npm run lint
 ```
 
 Testing is also setup using Jest and will execute all `*.test.js` files in 
