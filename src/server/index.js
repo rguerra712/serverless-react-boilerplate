@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 /**
  * Server Side Rendering
  */
@@ -12,20 +13,20 @@ import config from './config';
 const isLocal = process.env.IS_LOCAL || process.env.IS_OFFLINE;
 
 export async function render() {
-  let stats = { main: "index.js", css: "index.css" };
+  let stats = { main: 'index.js', css: 'index.css' };
   if (!isLocal) {
     try {
-      stats = require("../../dist/stats.json");
-    }
-    catch (err) {
-      throw new Error("`stats.json` not found");
+      // eslint-disable-next-line global-require
+      stats = require('../../dist/stats.json');
+    } catch (err) {
+      throw new Error('`stats.json` not found');
     }
   }
 
   const content = renderToString(
-    <ConfigProvider value={ config } >
-       <App />
-    </ConfigProvider>
+    <ConfigProvider value={config}>
+      <App />
+    </ConfigProvider>,
   );
   return Html({ stats, content, config });
 }

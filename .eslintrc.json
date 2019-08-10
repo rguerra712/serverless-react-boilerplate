@@ -1,0 +1,9 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "import/prefer-default-export": "off",
+    "import/no-named-as-default": "off",
+    "react/jsx-filename-extension": "off"
+  },
+  "parser": "babel-eslint"
+}

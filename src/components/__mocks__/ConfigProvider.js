@@ -1,8 +1,8 @@
-
+// eslint-disable-next-line no-undef
 export const ConfigContext = jest.fn(() => ({
   app: {
-    TITLE: "Mock"
-  }
+    TITLE: 'Mock',
+  },
 }));
 export const ConfigProvider = ({ children }) => children();
 export const ConfigConsumer = ({ children }) => children(ConfigContext());

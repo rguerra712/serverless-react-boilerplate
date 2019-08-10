@@ -8,9 +8,10 @@ const isLocal = process.env.IS_LOCAL || process.env.IS_OFFLINE;
 
 /**
  * Configuration Options
- * 
+ *
  * IMPORTANT:
- * The config is injected into the client (browser) and accessible through the {@link ConfigConsumer}
+ * The config is injected into the client (browser)
+ * and accessible through the {@link ConfigConsumer}
  * component. However, due to this behavior, it is important NOT to expose any sensitive information
  * such as passwords or tokens through the config.
  */
@@ -25,7 +26,8 @@ export const config = {
     URL: isLocal ? 'http://localhost:3000' : process.env.APIGATEWAY_URL,
     /** Where the bundled distribution files (`index.js`, `index.css`) are hosted */
     DIST_URL: isLocal ? 'http://localhost:8080' : process.env.APP_DIST_URL,
-    /** Where the contents of the `public` folder are hosted (might be the same as `config.app.DIST_URL`) */
+    /** Where the contents of the `public` folder are hosted
+     * (might be the same as `config.app.DIST_URL`) */
     PUBLIC_URL: isLocal ? 'http://localhost:8080' : process.env.APP_PUBLIC_URL,
   },
 };
