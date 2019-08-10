@@ -5,9 +5,11 @@
   "scripts": {
     "build": "sls package",
     "build:client": "webpack --config webpack.client.config.js --mode production",
+    "build-storybook": "build-storybook",
     "deploy": "sls deploy",
     "lint": "eslint . --fix",
     "start": "sls offline start --exec \"webpack-dev-server --config webpack.client.config.js --mode development\"",
+    "storybook": "start-storybook -p 6006",
     "test": "jest"
   },
   "jest": {
@@ -31,6 +33,11 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-stage-2": "^7.0.0",
     "@babel/runtime-corejs3": "^7.5.5",
+    "@storybook/addon-actions": "^5.1.10",
+    "@storybook/addon-knobs": "^5.1.10",
+    "@storybook/addon-links": "^5.1.10",
+    "@storybook/addons": "^5.1.10",
+    "@storybook/react": "^5.1.10",
     "aws-sdk": "^2.388.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.2",

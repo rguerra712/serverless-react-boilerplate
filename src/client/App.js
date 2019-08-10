@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import { ConfigConsumer } from '../components/ConfigProvider';
+import ExampleComponent from '../components/ExampleComponent';
 import './App.css';
 
 const App = () => (
@@ -21,6 +22,7 @@ const App = () => (
           {' '}
             and save to reload.
         </p>
+        <ExampleComponent text="Some Text" />
       </div>
     )}
   </ConfigConsumer>
